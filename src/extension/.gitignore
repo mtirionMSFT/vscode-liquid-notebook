@@ -1,0 +1,8 @@
+!.vscode
+.vscode-test
+coverage
+node_modules
+out
+dist
+package-lock.json
+*.vsix

@@ -1,0 +1,92 @@
+{
+  "name": "liquid-notebook",
+  "displayName": "Liquid Notebook",
+  "description": "VSCode Extension for Liquid Notebooks",
+  "version": "0.0.2",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.62.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dhp-devops@dev.azure.com/dhp-devops/DHP/_git/Research"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onNotebook:liquid-notebook"
+  ],
+  "main": "./out/extension/extension.js",
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "liquid-notebook-renderer",
+        "entrypoint": "./out/client/index.js",
+        "displayName": "Liquid Renderer",
+        "mimeTypes": []
+      }
+    ],
+    "notebooks": [
+      {
+        "type": "liquid-notebook",
+        "displayName": "Liquid Notebook",
+        "selector": [
+          {
+            "filenamePattern": "*.liquidbook"
+          }
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "id": "liquid-notebook-settings",
+        "aliases": [
+          "Settings"
+        ]
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "neilding.language-liquid",
+    "killalau.vscode-liquid-snippets"
+  ],
+  "scripts": {
+    "package": "vsce package --out ./vscode-liquid.vsix",
+    "vscode:prepublish": "npm run compile && node out/test/checkNoTestProvider.js",
+    "compile": "npm run compile:extension && npm run compile:client",
+    "compile:extension": "tsc -b",
+    "compile:client": "webpack --mode production",
+    "lint": "eslint src --ext ts",
+    "watch": "concurrently -r \"npm:watch:*\"",
+    "watch:extension": "tsc -b --watch",
+    "watch:client": "webpack --mode development --watch",
+    "dev": "concurrently -r npm:watch:extension npm:watch:client",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.62.0",
+    "@types/vscode-notebook-renderer": "^1.60.0",
+    "@types/webpack-env": "^1.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "concurrently": "^6.4.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.3.0",
+    "fork-ts-checker-webpack-plugin": "^6.5.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.3",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "vscode-notebook-error-overlay": "^1.0.1",
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "vsce": "^2.5.1"
+  }
+}

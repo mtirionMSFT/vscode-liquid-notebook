@@ -1,0 +1,21 @@
+<Project>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <PropertyGroup>
+      <LangVersion>9.0</LangVersion>
+      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+      <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/CodeAnalysis.ruleset</CodeAnalysisRuleSet>
+      <MicrosoftMainLibrariesVersion>3.1.10</MicrosoftMainLibrariesVersion>
+      <EntityFrameworkCoreVersion>5.0.1</EntityFrameworkCoreVersion>
+      <NewtonsoftJsonVersion>12.0.3</NewtonsoftJsonVersion>
+      <SystemVersion>5.0.0</SystemVersion>
+    </PropertyGroup>
+</Project>

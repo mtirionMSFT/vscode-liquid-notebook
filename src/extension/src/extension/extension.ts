@@ -13,11 +13,20 @@ import { LiquidNotebookKernel } from './notebookExecutionKernel';
  * @param context - the visual studio code context for the extension.
  */
 export function activate(context: vscode.ExtensionContext) {
-  setLiquidParser(path.join(
-    context.extensionPath, 
-    "dist", 
-    "LiquidParser", 
-    "LiquidParser.exe"));
+  if (process.platform === "win32") {
+    setLiquidParser(path.join(
+      context.extensionPath, 
+      "dist", 
+      "LiquidParser", 
+      "LiquidParser.exe"));
+  }
+  else {
+    setLiquidParser(path.join(
+      context.extensionPath, 
+      "dist", 
+      "LiquidParser", 
+      "LiquidParser"));
+  }
 
   context.subscriptions.push(
     vscode.workspace.registerNotebookSerializer(

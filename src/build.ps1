@@ -4,5 +4,6 @@ $outFolder = (New-Item -Name "$outputDirectory/LiquidParser" -ItemType Directory
 
 dotnet publish $project -c Release -r win-x64 /p:PublishSingleFile=true /p:CopyOutputSymbolsToPublishDirectory=false /p:GenerateDocumentationFile=false --self-contained false -o $outFolder
 dotnet publish $project -c Release -r linux-x64 /p:PublishSingleFile=true /p:CopyOutputSymbolsToPublishDirectory=false /p:GenerateDocumentationFile=false --self-contained true -o $outFolder
+icacls $outFolder\LiquidParser /grant:r "users:(RX)" /c
 
 Remove-Item $outFolder\*.pdb

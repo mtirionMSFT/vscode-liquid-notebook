@@ -1,4 +1,5 @@
-# Axa.Dhp.IngestionTool extra's
+# project extra's
+*.vsix
 
 # DocFx 
 reference/

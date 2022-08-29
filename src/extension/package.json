@@ -3,14 +3,14 @@
   "displayName": "Liquid Notebook",
   "description": "VSCode Extension for Liquid Notebooks",
   "version": "1.0.0",
-  "publisher": "vsce-mtirion-publisher",
   "license": "MIT",
+  "publisher": "vsce-mtirion-publisher",
   "engines": {
     "vscode": "^1.62.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mtirionMSFT/vscode-liquid-notebook"
+    "url": "https://github.com/mtirionMSFT/vscode-liquid-notebook.git"
   },
   "categories": [
     "Other"
@@ -91,3 +91,4 @@
     "vsce": "^2.5.1"
   }
 }
+

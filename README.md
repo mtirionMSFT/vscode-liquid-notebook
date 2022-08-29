@@ -17,4 +17,9 @@ Use PowerShell to run the build.ps1 script in the root of the repo. This will bu
 
 ## How to publish
 
-TODO: add pipeline to publish to VSCode marketplace.
+1. Make sure you have the right version setup using GitVersion. In GitVersion.yml you can set the `next-version` attribute.
+2. Run `build.ps1` to build all. It results in a VSIX file in the root.
+3. Use vsce login <publisher name> to login to the appropriate publisher with the configured Personal Access Token.
+4. Use `vsce publish` to upload to the marketplace
+
+It can also be done using the UI of the marketplace.

@@ -1,17 +1,43 @@
 # VSCode Extension for Liquid Notebooks
 
-It's advisable to install these extensions as well:
+This is a Visual Studio Code extension to support [Liquid](https://shopify.github.io/liquid/) Notebooks.
+
+[Liquid](https://shopify.github.io/liquid/) is an open-source template language created by [Shopify](https://www.shopify.com/). The input is text based combined with Liquid commands, indicated by the use of braces {}. The text can be anything, like HTML, CSS, JSON and more. Shopify provided a full [reference to the Liquid language](https://shopify.github.io/liquid/basics/introduction/). It's a secure template language that is also very accessible for non-programmer audiences.
+
+A Liquid Notebook can contain markdown blocks (text) and code blocks. Code blocks support (HTML) Liquid, but also offers a built-in `Settings` language. The extension contains a Liquid parser based on  the [open source Fluid framework](https://github.com/sebastienros/fluid). The parser is compiled for Windows and Linux.
+
+This extension depends on these extensions which are automatically installed whit this extension:
 
 * [Liquid](https://marketplace.visualstudio.com/items?itemName=sissel.shopify-liquid) for liquid syntax highlighting, auto formatting.
 * [Shopify Liquid Template Snippets](https://marketplace.visualstudio.com/items?itemName=killalau.vscode-liquid-snippets) for easy snippets typing Liquid commands
 
-⚠️ Follow the steps below, as the node_modules and LiquidParser.exe are required. ⚠️
+To learn more about this extension, we have made available a Liquid Notebook called [Getting Started with Liquid Notebooks](https://github.com/mtirionMSFT/vscode-liquid-notebook/blob/main/docs/getting-started-with-liquid.liquidbook). This is a getting started guide on using the extension. If you want to learn more about using the Liquid language, another Liquid Notebook called [Getting Started with Liquid](https://github.com/mtirionMSFT/vscode-liquid-notebook/blob/main/docs/getting-started-with-liquid.liquidbook) is available as well. All sources, including these notebooks can be found in [the open source GitHub repo](https://github.com/mtirionMSFT/vscode-liquid-notebook).
 
-## Running this Sample
+## Data
 
-1. npm install
-2. In PowerShell run `.\script\build.ps1` to get the latest LiquidParser
-3. Hit `F5` to build+debug
+The notebook will combine data and the provided Liquid to produce output in the Notebook. The data can be in either [Parquet format](https://parquet.apache.org/docs/) or in [Comma Separated Value (CSV) format](https://en.wikipedia.org/wiki/Comma-separated_values). These files should be placed in one folder where each file is treated as a table. 
+
+For a CSV file, every column is separated by a comma. The first line of the file is used as the list of field names. A sample of a well formed CSV file for Patients is this:
+
+```shell
+id,identifier,firstName,lastName,gender,birthDate,street,city,zipcode,phone
+1000,1000.1234.1000,Benjamin,Morris,M,21-11-1973,3 Kensington Close,Widnes,WA8 3BA,7700 109091
+1001,1001.1234.1001,Kimberly,Hall,F,22-11-1975,55 Kintore Drive,Great Sankey,WA5 3NP,7281 381935
+1002,1002.1234.1002,Nicole,Parker,F,23-11-1976,21 Martham Close,Grappenhall,WA4 2LU,7911 228350
+1003,1003.1234.1003,Heather,Williams,F,24-11-1977,429 Stockport Road,Timperley,WA15 7XR,7457 583736
+1004,1004.1234.1004,Michael,Smith,M,25-11-1978,45 Littlegate,Halton Brook,WA7 2EE,7911 046649
+1005,1005.1234.1005,Edward,Morgan,M,26-11-2001,16 Cowdell Street,Warrington,WA2 7PP,7700 188943
+1006,1006.1234.1006,Mia,Anderson,F,27-11-2011,8 Tobermory Close,Haydock,WA11 0YP,7199 284153
+1007,1007.1234.1007,Ava,Brown,F,28-11-2012,21 Yewdale Avenue,St Helens,WA11 7EY,7213 072284
+1008,1008.1234.1008,Paul,Clark,M,29-11-2013,23 Primrose Close,Orford,WA2 9BS,7454 662873
+1009,1009.1234.1009,Harry,Thompson,M,30-11-2014,88 Blundell Road,Widnes,WA8 8SN,7911 031431
+```
+
+Sample data can be found [in the repo as well](https://github.com/mtirionMSFT/vscode-liquid-notebook/blob/main/DemoContent/Data). The data model is explained there as well. It is a simplified model for FHIR HL7 Healthcare Claims. You can download that demo set and place it anywhere on your disk and configure it in your Liquid Notebook using [Settings](#Settings).
+
+## Templates
+
+When you are developing (partial) Liquid Templates, you can place them in a folder as well and reuse in the notebook as well.
 
 ## Settings
 
@@ -22,10 +48,3 @@ DATA [path to the folder containing the data]
 TEMPLATES [path to the folder containing templates for includes/render tags]
 ```
 
-## Parser
-
-This extension enables a Notebook that can contain Markdown blocks in combination with Code blocks. The Code blocks support [Liquid](https://shopify.github.io/liquid/) and the private Settings language to control notebook settings.
-
-Parsing Liquid is done using a Console Application. That application can import Parquet files and CSV files which will be in memory in tables with the name of the file without the extension. This model is accessible in the Liquid code blocks.
-
-The console app has to know where the data files are and where your templates files are located (in case you want to use the [include-](https://shopify.github.io/liquid/tags/template/#include) or [render-tag](https://shopify.github.io/liquid/tags/template/#render).

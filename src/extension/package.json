@@ -2,7 +2,7 @@
   "name": "liquid-notebook",
   "displayName": "Liquid Notebook",
   "description": "VSCode Extension for Liquid Notebooks",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "license": "MIT",
   "engines": {
     "vscode": "^1.62.0"
@@ -90,4 +90,10 @@
     "vsce": "^2.5.1"
   }
 }
+
+
+
+
+
+
 

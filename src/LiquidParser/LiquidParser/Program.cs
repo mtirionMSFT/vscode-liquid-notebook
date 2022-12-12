@@ -61,15 +61,18 @@
             try
             {
                 Model model = new Model();
-
-                // read all parquet files first
-                ParquetService parquet = new ParquetService();
-                CSVService csv = new CSVService();
+                JsonDocuments documents = new JsonDocuments();
 
                 if (options.InputFolder != null)
                 {
+                    ParquetService parquet = new ParquetService();
                     parquet.ImportFiles(model, options.InputFolder);
+
+                    CSVService csv = new CSVService();
                     csv.ImportFiles(model, options.InputFolder);
+
+                    JsonService jsonService = new JsonService();
+                    jsonService.ImportFiles(documents, options.InputFolder);
                 }
 
                 ParserService parser = new ParserService();
@@ -78,7 +81,7 @@
                 {
                     try
                     {
-                        output = parser.Render(model, options.Content, options.TemplateFolder);
+                        output = parser.Render(model, documents, options.Content, options.TemplateFolder);
                     }
                     catch (Exception ex)
                     {

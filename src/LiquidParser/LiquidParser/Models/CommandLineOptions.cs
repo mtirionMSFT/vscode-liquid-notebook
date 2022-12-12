@@ -16,13 +16,13 @@
         /// <summary>
         /// Gets or sets the folder with documents.
         /// </summary>
-        [Option('i', "input", Required = true, HelpText = "Folder containing the Parquet files for input.")]
+        [Option('i', "input", Required = true, HelpText = "Folder containing the data files for input.")]
         public string? InputFolder { get; set; }
 
         /// <summary>
-        /// Gets or sets the folder with documents.
+        /// Gets or sets the folder with Liquid templates (for includes).
         /// </summary>
-        [Option('t', "template", Required = true, HelpText = "Folder containing the templates.")]
+        [Option('t', "template", Required = false, HelpText = "Folder containing templates for include.")]
         public string? TemplateFolder { get; set; }
 
         /// <summary>
@@ -52,16 +52,19 @@
             // make sure path is full path
             InputFolder = Path.GetFullPath(InputFolder);
 
-            if (!Directory.Exists(TemplateFolder))
+            if (TemplateFolder != null)
             {
-                MessageHelper.Error($"ERROR: Template folder '{TemplateFolder}' doesn't exist.");
-                return false;
+                if (!Directory.Exists(TemplateFolder))
+                {
+                    MessageHelper.Error($"ERROR: Template folder '{TemplateFolder}' doesn't exist.");
+                    return false;
+                }
+
+                // make sure path is full path
+                TemplateFolder = Path.GetFullPath(TemplateFolder);
             }
 
-            // make sure path is full path
-            TemplateFolder = Path.GetFullPath(TemplateFolder);
-
-            // base64 decode content
+            // base64 dedecode content
             if (Content != null)
             {
                 Content = Encoding.UTF8.GetString(Convert.FromBase64String(Content));

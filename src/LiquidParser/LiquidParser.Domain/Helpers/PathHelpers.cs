@@ -17,7 +17,7 @@
         /// <returns>Sanitized table name.</returns>
         public static string SanitizeFilenameToTablename(string filename)
         {
-            return Regex.Replace(filename, @"[^\w\- ]", string.Empty).Replace(" ", "-");
+            return Regex.Replace(filename, @"[^\w\- ]", string.Empty).Replace(" ", "-").ToLower();
         }
     }
 }

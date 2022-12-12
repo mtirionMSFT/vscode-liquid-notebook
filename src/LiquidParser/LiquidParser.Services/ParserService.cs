@@ -16,10 +16,11 @@
         /// Renders a string as a template.
         /// </summary>
         /// <param name="data">Data model to provide to the template.</param>
+        /// <param name="documents">Json documents to provide to the template.</param>
         /// <param name="templateContent">The template content.</param>
         /// <param name="rootFolder">Root folder to use for includes (optional).</param>
         /// <returns>A rendered template.</returns>
-        public string Render(object data, string templateContent, string? rootFolder = null)
+        public string Render(Model data, JsonDocuments documents, string templateContent, string? rootFolder = null)
         {
             var parser = new FluidParser();
 
@@ -47,8 +48,15 @@
                 options.ValueConverters.Add(o => o is Table t ? new TableObjectConverter(t) : null);
                 options.ValueConverters.Add(o => o is Record r ? new RecordObjectConverter(r) : null);
                 options.ValueConverters.Add(o => o is Fields fs ? new FieldsObjectConverter(fs) : null);
+                options.ValueConverters.Add(o => o is JsonDocuments jd ? new JsonDocumentsConverter(jd) : null);
 
-                var ctx = new TemplateContext(new { model = data }, options, true);
+                var ctx = new TemplateContext(options, true);
+                ctx.SetValue("model", data);
+                foreach (var doc in documents.Documents)
+                {
+                    ctx.SetValue(doc.Key, (object)doc.Value);
+                }
+
                 try
                 {
                     return template.Render(ctx);

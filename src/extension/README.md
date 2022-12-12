@@ -15,7 +15,7 @@ To learn more about this extension, we have made available a Liquid Notebook cal
 
 ## Data
 
-The notebook will combine data and the provided Liquid to produce output in the Notebook. The data can be in either [Parquet format](https://parquet.apache.org/docs/) or in [Comma Separated Value (CSV) format](https://en.wikipedia.org/wiki/Comma-separated_values). These files should be placed in one folder where each file is treated as a table. 
+The notebook will combine data and the provided Liquid to produce output in the Notebook. The data can be in either [Parquet format](https://parquet.apache.org/docs/), in [Comma Separated Value (CSV) format](https://en.wikipedia.org/wiki/Comma-separated_values) or in [JSON format](https://en.wikipedia.org/wiki/JSON). These files should be placed in one folder. Parquet files and CSV files are treated as tables accessible via the `model` object. 
 
 For a CSV file, every column is separated by a comma. The first line of the file is used as the list of field names. A sample of a well formed CSV file for Patients is this:
 
@@ -32,6 +32,10 @@ id,identifier,firstName,lastName,gender,birthDate,street,city,zipcode,phone
 1008,1008.1234.1008,Paul,Clark,M,29-11-2013,23 Primrose Close,Orford,WA2 9BS,7454 662873
 1009,1009.1234.1009,Harry,Thompson,M,30-11-2014,88 Blundell Road,Widnes,WA8 8SN,7911 031431
 ```
+
+JSON files are accessible by using the name of the file without extension and where spaces are replace by a dash (e.g. 'sample file' is 'sample-file'). The JSON structure can then be navigated using properties by name and using indexers for arrays. So something like `sample-file.questions[0].question`.
+
+> NOTE: if you use **model.json**, it will interfere with the standard `model` object for access to the tables. So don't use that as a name for a JSON file to prevent errors.
 
 Sample data can be found [in the repo as well](https://github.com/mtirionMSFT/vscode-liquid-notebook/blob/main/DemoContent/Data). The data model is explained there as well. It is a simplified model for FHIR HL7 Healthcare Claims. You can download that demo set and place it anywhere on your disk and configure it in your Liquid Notebook using [Settings](#Settings).
 

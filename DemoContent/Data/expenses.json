@@ -1,0 +1,160 @@
+{ "expenses":
+  [
+    {
+      "Employee": "Joe",
+      "Week": [
+        {
+          "Number": 3,
+          "Items": [
+            {
+              "Category": "Beer",
+              "Amount": 18.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 12.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 19.00
+            },
+            {
+              "Category": "Car",
+              "Amount": 20.00
+            }
+          ]
+        },
+        {
+          "Number": 4,
+          "Items": [
+            {
+              "Category": "Beer",
+              "Amount": 19.00
+            },
+            {
+              "Category": "Beer",
+              "Amount": 16.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 17.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 17.00
+            },
+            {
+              "Category": "Beer",
+              "Amount": 14.00
+            }
+          ]
+        },
+        {
+          "Number": 5,
+          "Items": [
+            {
+              "Category": "Beer",
+              "Amount": 14.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 12.00
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Employee": "Beth",
+      "Week": [
+        {
+          "Number": 3,
+          "Items": [
+            {
+              "Category": "Beer",
+              "Amount": 16.00
+            }
+          ]
+        },
+        {
+          "Number": 4,
+          "Items": [
+            {
+              "Category": "Food",
+              "Amount": 17.00
+            },
+            {
+              "Category": "Beer",
+              "Amount": 15.00
+            }
+          ]
+        },
+        {
+          "Number": 5,
+          "Items": [
+            {
+              "Category": "Food",
+              "Amount": 12.00
+            },
+            {
+              "Category": "Beer",
+              "Amount": 20.00
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Employee": "Janet",
+      "Week": [
+        {
+          "Number": 3,
+          "Items": [
+            {
+              "Category": "Car",
+              "Amount": 19.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 18.00
+            },
+            {
+              "Category": "Beer",
+              "Amount": 18.00
+            }
+          ]
+        },
+        {
+          "Number": 4,
+          "Items": [
+            {
+              "Category": "Car",
+              "Amount": 17.00
+            }
+          ]
+        },
+        {
+          "Number": 5,
+          "Items": [
+            {
+              "Category": "Beer",
+              "Amount": 14.00
+            },
+            {
+              "Category": "Car",
+              "Amount": 12.00
+            },
+            {
+              "Category": "Beer",
+              "Amount": 19.00
+            },
+            {
+              "Category": "Food",
+              "Amount": 12.00
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-﻿{
+{
   "name": "liquid-notebook",
   "displayName": "Liquid Notebook",
   "description": "VSCode Extension for Liquid Notebooks",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "publisher": "vsce-mtirion-publisher",
   "engines": {
@@ -91,4 +91,13 @@
     "vsce": "^2.5.1"
   }
 }
+
+
+
+
+
+
+
+
+
 

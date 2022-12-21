@@ -1,7 +1,8 @@
 {
   "profiles": {
     "LiquidParser": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-i \"D:\\Git\\CSE\\ZF\\computer-vision-toolbox\\Data\" -c eyUgZm9yIHNpZ25hbCBpbiBzaWduYWxzICV9Clwie3sgc2lnbmFsLlN0cmVhbWluZ1BvcnQgfX0vdWRwXCI6IHt9eyUgdW5sZXNzIGZvcmxvb3AubGFzdCAlfSx7JSBlbmR1bmxlc3MgLSV9CnslIGVuZGZvciAlfQ=="
     }
   }
 }

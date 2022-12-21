@@ -74,5 +74,23 @@
 
             return Create(null, context.Options);
         }
+
+        /// <inheritdoc/>
+        public override IEnumerable<FluidValue> Enumerate(TemplateContext context)
+        {
+            Precondition.NotNull(context);
+            Table? obj = Value as Table;
+            List<FluidValue> list = new List<FluidValue>();
+
+            if (obj != null)
+            {
+                foreach (var rec in obj.Records)
+                {
+                    list.Add(FluidValue.Create(rec, context.Options));
+                }
+            }
+
+            return list;
+        }
     }
 }

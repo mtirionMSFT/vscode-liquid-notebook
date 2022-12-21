@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidParser", "LiquidParser\LiquidParser.csproj", "{20649B8E-1F59-499E-832B-B42261DDCC99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiquidParser", "LiquidParser\LiquidParser.csproj", "{20649B8E-1F59-499E-832B-B42261DDCC99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidParser.Domain", "LiquidParser.Domain\LiquidParser.Domain.csproj", "{BAA5759C-ACBE-4DA5-AB7E-78DE2CE28E80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiquidParser.Domain", "LiquidParser.Domain\LiquidParser.Domain.csproj", "{BAA5759C-ACBE-4DA5-AB7E-78DE2CE28E80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidParser.Services", "LiquidParser.Services\LiquidParser.Services.csproj", "{D9B0041B-D258-4114-A764-56BD76D89FA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiquidParser.Services", "LiquidParser.Services\LiquidParser.Services.csproj", "{D9B0041B-D258-4114-A764-56BD76D89FA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

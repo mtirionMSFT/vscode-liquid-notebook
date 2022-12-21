@@ -62,6 +62,7 @@
             {
                 Model model = new Model();
                 JsonDocuments documents = new JsonDocuments();
+                EnvFiles envFiles = new EnvFiles();
 
                 if (options.InputFolder != null)
                 {
@@ -73,6 +74,9 @@
 
                     JsonService jsonService = new JsonService();
                     jsonService.ImportFiles(documents, options.InputFolder);
+
+                    EnvFileService envService = new EnvFileService();
+                    envService.ImportFiles(envFiles, options.InputFolder);
                 }
 
                 ParserService parser = new ParserService();
@@ -81,7 +85,7 @@
                 {
                     try
                     {
-                        output = parser.Render(model, documents, options.Content, options.TemplateFolder);
+                        output = parser.Render(model, documents, envFiles, options.Content, options.TemplateFolder);
                     }
                     catch (Exception ex)
                     {

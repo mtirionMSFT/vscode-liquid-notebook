@@ -1,156 +1,156 @@
-{ "expenses":
+{ "employees":
   [
     {
-      "Employee": "Joe",
-      "Week": [
+      "employee": "Joe",
+      "week": [
         {
-          "Number": 3,
-          "Items": [
+          "number": 3,
+          "items": [
             {
-              "Category": "Beer",
-              "Amount": 18.00
+              "category": "Beer",
+              "amount": 18.00
             },
             {
-              "Category": "Food",
-              "Amount": 12.00
+              "category": "Food",
+              "amount": 12.00
             },
             {
-              "Category": "Food",
-              "Amount": 19.00
+              "category": "Food",
+              "amount": 19.00
             },
             {
-              "Category": "Car",
-              "Amount": 20.00
+              "category": "Car",
+              "amount": 20.00
             }
           ]
         },
         {
-          "Number": 4,
-          "Items": [
+          "number": 4,
+          "items": [
             {
-              "Category": "Beer",
-              "Amount": 19.00
+              "category": "Beer",
+              "amount": 19.00
             },
             {
-              "Category": "Beer",
-              "Amount": 16.00
+              "category": "Beer",
+              "amount": 16.00
             },
             {
-              "Category": "Food",
-              "Amount": 17.00
+              "category": "Food",
+              "amount": 17.00
             },
             {
-              "Category": "Food",
-              "Amount": 17.00
+              "category": "Food",
+              "amount": 17.00
             },
             {
-              "Category": "Beer",
-              "Amount": 14.00
+              "category": "Beer",
+              "amount": 14.00
             }
           ]
         },
         {
-          "Number": 5,
-          "Items": [
+          "number": 5,
+          "items": [
             {
-              "Category": "Beer",
-              "Amount": 14.00
+              "category": "Beer",
+              "amount": 14.00
             },
             {
-              "Category": "Food",
-              "Amount": 12.00
+              "category": "Food",
+              "amount": 12.00
             }
           ]
         }
       ]
     },
     {
-      "Employee": "Beth",
-      "Week": [
+      "employee": "Beth",
+      "week": [
         {
-          "Number": 3,
-          "Items": [
+          "number": 3,
+          "items": [
             {
-              "Category": "Beer",
-              "Amount": 16.00
+              "category": "Beer",
+              "amount": 16.00
             }
           ]
         },
         {
-          "Number": 4,
-          "Items": [
+          "number": 4,
+          "items": [
             {
-              "Category": "Food",
-              "Amount": 17.00
+              "category": "Food",
+              "amount": 17.00
             },
             {
-              "Category": "Beer",
-              "Amount": 15.00
+              "category": "Beer",
+              "amount": 15.00
             }
           ]
         },
         {
-          "Number": 5,
-          "Items": [
+          "number": 5,
+          "items": [
             {
-              "Category": "Food",
-              "Amount": 12.00
+              "category": "Food",
+              "amount": 12.00
             },
             {
-              "Category": "Beer",
-              "Amount": 20.00
+              "category": "Beer",
+              "amount": 20.00
             }
           ]
         }
       ]
     },
     {
-      "Employee": "Janet",
-      "Week": [
+      "employee": "Janet",
+      "week": [
         {
-          "Number": 3,
-          "Items": [
+          "number": 3,
+          "items": [
             {
-              "Category": "Car",
-              "Amount": 19.00
+              "category": "Car",
+              "amount": 19.00
             },
             {
-              "Category": "Food",
-              "Amount": 18.00
+              "category": "Food",
+              "amount": 18.00
             },
             {
-              "Category": "Beer",
-              "Amount": 18.00
+              "category": "Beer",
+              "amount": 18.00
             }
           ]
         },
         {
-          "Number": 4,
-          "Items": [
+          "number": 4,
+          "items": [
             {
-              "Category": "Car",
-              "Amount": 17.00
+              "category": "Car",
+              "amount": 17.00
             }
           ]
         },
         {
-          "Number": 5,
-          "Items": [
+          "number": 5,
+          "items": [
             {
-              "Category": "Beer",
-              "Amount": 14.00
+              "category": "Beer",
+              "amount": 14.00
             },
             {
-              "Category": "Car",
-              "Amount": 12.00
+              "category": "Car",
+              "amount": 12.00
             },
             {
-              "Category": "Beer",
-              "Amount": 19.00
+              "category": "Beer",
+              "amount": 19.00
             },
             {
-              "Category": "Food",
-              "Amount": 12.00
+              "category": "Food",
+              "amount": 12.00
             }
           ]
         }

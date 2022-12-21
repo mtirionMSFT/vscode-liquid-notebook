@@ -15,7 +15,18 @@ To learn more about this extension, we have made available a Liquid Notebook cal
 
 ## Data
 
-The notebook will combine data and the provided Liquid to produce output in the Notebook. The data can be in either [Parquet format](https://parquet.apache.org/docs/), in [Comma Separated Value (CSV) format](https://en.wikipedia.org/wiki/Comma-separated_values) or in [JSON format](https://en.wikipedia.org/wiki/JSON). These files should be placed in one folder. Parquet files and CSV files are treated as tables accessible via the `model` object. 
+The notebook will combine data and the provided Liquid to produce output in the Notebook. The following formats are supported:
+
+* [Parquet format](https://parquet.apache.org/docs/). Files with extension .parquet.
+* [Comma Separated Value (CSV) format](https://en.wikipedia.org/wiki/Comma-separated_values). Files with extension .csv.
+* [JSON format](https://en.wikipedia.org/wiki/JSON). Files with extension .json.
+* [.env files](https://docs.docker.com/compose/environment-variables/). Files with extension .env.
+
+ These files should be placed in one folder. Parquet files and CSV files are treated as tables accessible via the `_model` object or directly accessible by the filename without extension. All other types are accessible directly by the filename without extension. This means that sample.json is accessible as `sample`.
+
+The data model also make the `_env` available which provides all environment variables from your environment. A variable can be accessed using `{{ _env.COMPUTERNAME }}` or `{{ _env['COMPUTERNAME'] }}`.
+
+### CSV Files
 
 For a CSV file, every column is separated by a comma. The first line of the file is used as the list of field names. A sample of a well formed CSV file for Patients is this:
 
@@ -33,11 +44,26 @@ id,identifier,firstName,lastName,gender,birthDate,street,city,zipcode,phone
 1009,1009.1234.1009,Harry,Thompson,M,30-11-2014,88 Blundell Road,Widnes,WA8 8SN,7911 031431
 ```
 
+### JSON Files
+
 JSON files are accessible by using the name of the file without extension and where spaces are replace by a dash (e.g. 'sample file' is 'sample-file'). The JSON structure can then be navigated using properties by name and using indexers for arrays. So something like `sample-file.questions[0].question`.
 
 > NOTE: if you use **model.json**, it will interfere with the standard `model` object for access to the tables. So don't use that as a name for a JSON file to prevent errors.
 
-Sample data can be found [in the repo as well](https://github.com/mtirionMSFT/vscode-liquid-notebook/blob/main/DemoContent/Data). The data model is explained there as well. It is a simplified model for FHIR HL7 Healthcare Claims. You can download that demo set and place it anywhere on your disk and configure it in your Liquid Notebook using [Settings](#Settings).
+### .env Files
+
+A .env file has a environment variable setting per line, where the format is `[variable name]=[value]`. An example:
+
+```shell
+DatabaseSettings__ConnectionString=server=(localdb)\MSSQLLocalDB;database=TEST;Integrated Security=true
+SwaggerUI__ClientId=11111111-1111-1111-1111-111111111111
+```
+
+You can reference the variable either with `DatabaseSettings__ConnectionString` or `DatabaseSettings:ConnectionString`. We'll do a replacement for the search in the converter if needed.
+
+### Sample data
+
+Sample data can be found [in the repo as well](https://github.com/mtirionMSFT/vscode-liquid-notebook/blob/main/DemoContent/Data). The data model is explained there as well. It is a simplified model for FHIR HL7 Healthcare Claims. You can download that demo set and place it anywhere on your disk and configure it in your Liquid Notebook using Settings](#Settings).
 
 ## Templates
 
@@ -51,4 +77,3 @@ To have the settings for your notebook, include a Settings language block at the
 DATA [path to the folder containing the data]
 TEMPLATES [path to the folder containing templates for includes/render tags]
 ```
-
